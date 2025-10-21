@@ -1,8 +1,9 @@
 package rvt;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class JMArrayList {
     public static void main(String[] args){
-        listSize();
+        onTheList();
     }
     public static void onlyTheseNums() {
         ArrayList<Integer> numList = new ArrayList<>();
@@ -43,6 +44,7 @@ public class JMArrayList {
     public static void onTheList() {
         ArrayList<String> names = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        int counter = 0;
         System.out.println("enter names: ");
         while (true) {
             String name = scanner.nextLine();
@@ -51,7 +53,11 @@ public class JMArrayList {
                 names.remove(names.size()-1);
                 System.out.println("What name to find? ");
                 String findName = scanner.nextLine();
-                if 
+                if (names.contains(findName)){
+                    System.out.println(names.get(names.indexOf(findName)) + " has been found!!");
+                } else {
+                    System.out.println(findName + " has NOT been found!!");
+                }
                 break;
             }
         }
